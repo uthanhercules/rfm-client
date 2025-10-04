@@ -11,7 +11,7 @@ const modalName = ref('');
 onMounted(async () => {
   try {
     const response = await fetch(
-      'http://127.0.0.1:8000/api/clients/categories'
+      `${import.meta.env.VITE_CO_API_BASE_URL}/clients/categories`
     );
     if (!response.ok) throw new Error('Erro ao carregar API');
     const values = await response.json();
@@ -28,7 +28,7 @@ onMounted(async () => {
 async function handleMouseClick(cell) {
   try {
     const response = await fetch(
-        `http://127.0.0.1:8000/api/clients/categories/${cell.key}`
+      `${import.meta.env.VITE_CO_API_BASE_URL}/clients/categories/${cell.key}`
     );
     if (!response.ok) throw new Error('Erro ao carregar detalhes dos clientes');
     const values = await response.json();
