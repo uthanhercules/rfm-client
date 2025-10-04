@@ -74,7 +74,7 @@ async function handleMouseClick(cell) {
                 <td>{{ client.name }}</td>
                 <td>{{ client.recency }}</td>
                 <td>{{ client.frequency }}</td>
-                <td>{{ client.total_spent }}</td>
+                <td>{{ (client.total_spent / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }}</td>
               </tr>
             </tbody>
           </table>
@@ -123,9 +123,11 @@ h1 {
 
 .modal-content {
   background-color: #fff;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   border-radius: 8px;
   max-width: 90%;
+  width: 800px;
+  height: 500px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: relative;
   color: #000;
@@ -147,7 +149,7 @@ h1 {
 
 .modal-body {
   overflow-y: auto;
-  max-height: 400px;
+  max-height: 80%
 }
 
 .modal-body table {

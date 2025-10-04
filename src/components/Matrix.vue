@@ -118,8 +118,8 @@ function getZIndex(type, isGhost) {
   font-size: 14px;
   text-align: center;
   transition:
-    transform 0.3s,
-    z-index 0.3s;
+  transform 0.3s,
+  z-index 0.3s;
 }
 
 .A {
